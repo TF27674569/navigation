@@ -9,7 +9,7 @@ import org.navigation.utils.Utils;
 
 /**
  * description：测量绑定高度处理
- * <p>
+ * <p/>
  * Created by TIAN FENG on 2017/12/29.
  * QQ：27674569
  * Email: 27674569@qq.com
@@ -32,8 +32,8 @@ class NavigationRunable implements Runnable {
     public void run() {
         // 拿到自己的activity对应的布局对应的layoutparams
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) mContentView.getChildAt(1).getLayoutParams();
-        // 如果需要沉浸式 , 并且给了颜色
-        if (mParams.mIsImmersion && mParams.mImmersionColor != AbsNavigationBar.NO_IMMERSION) {
+        // 如果需要沉浸式 , 判断需不需要移除statusbar
+        if (mParams.mIsImmersion && !mParams.mRemoveStatusBar) {
             // 设置间距为mNavigationView的高
             layoutParams.topMargin = mNavigationView.getMeasuredHeight() + Utils.getStatusBarHeight(mParams.mContext);
         } else {

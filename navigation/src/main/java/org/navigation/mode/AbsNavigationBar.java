@@ -2,6 +2,7 @@ package org.navigation.mode;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,7 @@ import org.navigation.utils.Utils;
 
 /**
  * description：title导航栏，通过DecorView来加载title控件，不用在布局中incloud布局
- * <p>
+ * <p/>
  * Created by TIAN FENG on 2017/11/8
  * QQ：27674569
  * Email: 27674569@qq.com
@@ -152,6 +153,13 @@ public abstract class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNav
             return this;
         }
 
+        // 移除状态栏
+        public Builder removeStatusBar() {
+            getLaParams().mIsImmersion = true;
+            getLaParams().mRemoveStatusBar = true;
+            return this;
+        }
+
         public abstract <T extends AbsNavigationBar> T build();
 
 
@@ -160,8 +168,10 @@ public abstract class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNav
             public Context mContext;
             // 是否需要沉浸式 需要子类赋值
             public boolean mIsImmersion;
+            // 是否需要沉浸式 需要子类赋值
+            public boolean mRemoveStatusBar = false;
             // 沉浸式颜色 默认透明
-            public int mImmersionColor = NO_IMMERSION;
+            public int mImmersionColor = Color.parseColor("#00000000");
 
             public AbsNavigationParams(Context context) {
                 this.mContext = context;
