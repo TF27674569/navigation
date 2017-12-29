@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titleRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <View
+        android:id="@+id/vStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:visibility="gone"
+            android:src="@mipmap/ic_arrow_left"
+            android:layout_width="48dp"
+            android:padding="8dp"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvTitle"
+            android:text="title"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#20000000"/>
+
+</LinearLayout>
