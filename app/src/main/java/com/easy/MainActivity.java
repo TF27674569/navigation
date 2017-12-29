@@ -32,6 +32,8 @@ public class MainActivity extends BaseActivity {
         new CommonNavigation.Builder(this)
                 .setTitle("首页")
                 .setImmersionColor(Color.parseColor("#60000000"))
+//                .removeStatusBar()
+//                .setImmersion()
                 .build();
     }
 

@@ -31,7 +31,7 @@ public class CommonNavigation extends AbsNavigationBar<CommonNavigation.Builder.
     public void applyView() {
         setText(R.id.tvTitle, getParams().mTitle);
         setOnClickListener(R.id.btnBack, getParams().mBackClickListener);
-        if (getParams().mIsImmersion && getParams().mImmersionColor != AbsNavigationBar.NO_IMMERSION) {
+        if (getParams().mIsImmersion && !getParams().mRemoveStatusBar) {
             findViewById(R.id.vStatusBar).getLayoutParams().height = Utils.getStatusBarHeight(getParams().mContext);
             setBackgroundColor(R.id.vStatusBar, getParams().mImmersionColor);
         }
